@@ -22,7 +22,7 @@ namespace Tyuiu.ZhukovaYA.Sprint5.Task1.V14.Lib
             {
                 if (x == 0)
                 {
-                    File.AppendAllText(path, "0");
+                    File.AppendAllText(path, "0" + Environment.NewLine);
                     continue;
                 }
                 y = (Math.Sin(x)/(x+1.7)) - Math.Cos(x)*4*x-6;
