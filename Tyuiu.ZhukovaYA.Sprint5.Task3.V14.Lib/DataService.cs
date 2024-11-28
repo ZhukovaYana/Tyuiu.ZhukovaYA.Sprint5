@@ -1,4 +1,5 @@
-﻿using tyuiu.cources.programming.interfaces.Sprint5;
+﻿using System.Text;
+using tyuiu.cources.programming.interfaces.Sprint5;
 
 namespace Tyuiu.ZhukovaYA.Sprint5.Task3.V14.Lib
 {
@@ -8,7 +9,11 @@ namespace Tyuiu.ZhukovaYA.Sprint5.Task3.V14.Lib
         {
             string path = Path.Combine(Path.GetTempPath(), "OutPutFileTask3.bin");
             double res = (double)(4 * Math.Pow(x, 3)) / (Math.Pow(x, 3) - 1);
-            File.WriteAllText(path, Math.Round((double)res, 3).ToString());
+
+            using (BinaryWriter writer = new BinaryWriter(File.Open(path, FileMode.OpenOrCreate), Encoding.UTF8))
+            {
+                writer.Write(BitConverter.GetBytes(Math.Round(res, 3)));
+            }
             return path;
         }
     }
