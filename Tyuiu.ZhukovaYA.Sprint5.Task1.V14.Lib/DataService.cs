@@ -20,11 +20,11 @@ namespace Tyuiu.ZhukovaYA.Sprint5.Task1.V14.Lib
 
             for (int x = startValue; x <= stopValue; x++)
             {
-                if (x == 0)
-                {
-                    File.AppendAllText(path, "0" + Environment.NewLine);
-                    continue;
-                }
+                //if (x == 0)
+                //{
+                //    File.AppendAllText(path, "0" + Environment.NewLine);
+                //    continue;
+                //}
                 y = (Math.Sin(x)/(x+1.7)) - Math.Cos(x)*4*x-6;
                 y = Math.Round(y, 2);
 
