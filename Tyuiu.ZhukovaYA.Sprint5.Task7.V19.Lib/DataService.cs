@@ -11,7 +11,7 @@ namespace Tyuiu.ZhukovaYA.Sprint5.Task7.V19.Lib
             using (StreamReader sr = new StreamReader(path))
             {
                 line = sr.ReadToEnd();
-                line = line.Replace("сс","");
+                line = line.ToLower().Replace("сс","");
             }
             File.WriteAllText(pathsave, line);
             return pathsave;
