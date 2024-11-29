@@ -25,5 +25,6 @@ namespace Tyuiu.ZhukovaYA.Sprint5.Task5.V9.Lib
                 }
                 return res;
             }
+        }
     }
 }
