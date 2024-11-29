@@ -12,14 +12,11 @@ namespace Tyuiu.ZhukovaYA.Sprint5.Task5.V9.Lib
                 string[] line = reader.ReadToEnd().Split(' ');
                 for (int i = 0; i < line.Length; i++)
                 {
-                    res = Convert.ToDouble(line[i].Replace('.', ','));
-                    if (double.TryParse(line[i], out double number))
-                    {
-                        if (number > res)
+                    double number = Convert.ToDouble(line[i].Replace('.', ','));
+                        if (number > res && number % 1 == 0)
                         {
                             res = number;
                         }
-                    }
 
                 }
                 return res;
