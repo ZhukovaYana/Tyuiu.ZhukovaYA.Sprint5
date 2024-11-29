@@ -6,19 +6,24 @@ namespace Tyuiu.ZhukovaYA.Sprint5.Task5.V9.Lib
     {
         public double LoadFromDataFile(string path)
         {
-            double res = 0;
+            double res = double.MinValue;
             using (StreamReader reader = new StreamReader(path))
             {
                 string line;
                 while ((line = reader.ReadLine()) != null)
                 {
-                    if (Convert.ToInt32(line.Replace('.', ',')) > res)
+                    res = Convert.ToDouble(line) % 1;
+                    if (double.TryParse(line, out double number))
                     {
-                        res = Convert.ToInt32(line);
+                        if (number > res)
+                        {
+                            res = number;
+                        }
                     }
+
+
                 }
+                return res;
             }
-            return Math.Round(res, 3);
-        }
     }
 }
