@@ -1,4 +1,5 @@
-﻿using tyuiu.cources.programming.interfaces.Sprint5;
+﻿using System.Text.RegularExpressions;
+using tyuiu.cources.programming.interfaces.Sprint5;
 
 namespace Tyuiu.ZhukovaYA.Sprint5.Task6.V5.Lib
 {
@@ -8,11 +9,11 @@ namespace Tyuiu.ZhukovaYA.Sprint5.Task6.V5.Lib
         {
             int res = 0;
             using (StreamReader sr = new StreamReader(path)) 
-            { 
+            {
                 string line = sr.ReadToEnd();
                 for (int i = 0; i < line.Length; i++)
                 {
-                    if (Char.IsUpper(line[i]) && Char.IsLetter(line[i]))
+                    if (Char.IsAsciiLetterUpper(line[i]))
                     {
                         res++;
                     }
